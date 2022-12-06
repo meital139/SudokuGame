@@ -1,0 +1,116 @@
+
+#squarePage{
+  background-color: #000;
+}
+  
+.headerImg {
+  position: relative;
+  text-align: center;
+  padding: 0px;
+  margin:0px;
+}
+
+img{width: 500px;}
+  
+.inpt{
+  margin-top: 20px;
+  margin-left: 30px; 
+  height: 50px;
+  width: 450px;
+  font-size: larger;
+  font-weight: bold;
+  font-family: Verdana, Tahoma, sans-serif;}
+  
+#enter{
+  margin-bottom: 20px;
+  font-size: 24px;
+  background: linear-gradient(-45deg, #e73c7e, #23a6d5, #23d5ab);
+}
+  
+#userName{
+  margin-top: 50px;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  background: #000;
+}
+
+.board {
+  margin: auto;
+  height: 200px;
+  width: 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+  
+.square:nth-child(even) {
+  background: white;
+  animation-delay: 1s;
+}
+
+.square:nth-child(odd) {
+  background: black(0, 0, 0);
+  z-index: 1;
+  position: relative;
+}
+  
+.square:nth-child(5n + 1) {
+  animation: rotate linear 5s infinite;
+}
+
+.square:nth-child(5n + 2) {
+  animation: rotate linear 5s infinite;
+  animation-delay: 0.25s;
+}
+  
+.square:nth-child(5n + 3) {
+  animation: rotate linear 5s infinite;
+  animation-delay: 0.5s;
+}
+  
+.square:nth-child(5n + 4) {
+  animation: rotate linear 5s infinite;
+  animation-delay: 0.75s;
+}
+  
+.square:nth-child(5n + 5) {
+  animation: rotate linear 5s infinite;
+  animation-delay: 1s;
+}
+  
+@keyframes rotate {
+  10% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  75% {
+    transform: rotate(0);
+  }
+}
+
+#validUserName{
+  margin-left: 20px;
+  color: #e73c7e;
+  font-size: 22px;
+  font-family: Verdana, Tahoma, sans-serif;
+  font-weight: bold;
+}
+
+#validPassword{
+  margin-left: 20px;
+  color: #e73c7e;
+  font-size: 22px;
+  font-family: Verdana, Tahoma, sans-serif;
+  font-weight: bold;
+}
+
+@media(max-width:992px){
+  #squarePage{
+    max-width: 510px;
+  }
+}

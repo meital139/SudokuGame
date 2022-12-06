@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
+
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>SUDOKU</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='sudokuGameStyle.css'>
+</head>
+
+<body>
+    <h2>Good luck </h2>
+
+    <div id="sudokuDiv">
+        <table class="sudokuTable">
+            <tr class="cells">
+                <td id="0,0"> </td>
+                <td id="0,1"> </td>
+                <td class="borderRigth" id="0,2"> </td>
+                <td id="0,3"> </td>
+                <td id="0,4"> </td>
+                <td class="borderRigth" id="0,5"> </td>
+                <td id="0,6"> </td>
+                <td id="0,7"> </td>
+                <td id="0,8"> </td>
+            </tr>
+
+            <tr class="cells">
+                <td id="1,0"> <input type="number"></td>
+                <td id="1,1"> </td>
+                <td class="borderRigth" id="1,2"> </td>
+                <td id="1,3"> </td>
+                <td id="1,4"> </td>
+                <td class="borderRigth" id="1,5"> </td>
+                <td id="1,6"> </td>
+                <td id="1,7"> </td>
+                <td id="1,8"> </td>
+            </tr>
+
+            <tr class="borderBottom cells">
+                <td id="2,0"> </td>
+                <td id="2,1"> </td>
+                <td class="borderRigth" id="2,2"> </td>
+                <td id="2,3"> </td>
+                <td id="2,4"> </td>
+                <td class="borderRigth" id="2,5"> </td>
+                <td id="2,6"> </td>
+                <td id="2,7"> </td>
+                <td id="2,8"> </td>
+            </tr>
+            </tr>
+
+            <tr class="cells">
+                <td id="3,0"> </td>
+                <td id="3,1"> </td>
+                <td class="borderRigth" id="3,2"> </td>
+                <td id="3,3"> </td>
+                <td id="3,4"> </td>
+                <td class="borderRigth" id="3,5"> </td>
+                <td id="3,6"> </td>
+                <td id="3,7"> </td>
+                <td id="3,8"> </td>
+            </tr>
+
+            <tr class="cells">
+                <td id="4,0"> </td>
+                <td id="4,1"> </td>
+                <td class="borderRigth" id="4,2"> </td>
+                <td id="4,3"> </td>
+                <td id="4,4"> </td>
+                <td class="borderRigth" id="4,5"> </td>
+                <td id="4,6"> </td>
+                <td id="4,7"> </td>
+                <td id="4,8"> </td>
+            </tr>
+
+            <tr class="borderBottom">
+                <td id="5,0"> </td>
+                <td id="5,1"> </td>
+                <td class="borderRigth" id="5,2"> </td>
+                <td id="5,3"> </td>
+                <td id="5,4"> </td>
+                <td class="borderRigth" id="5,5"> </td>
+                <td id="5,6"> </td>
+                <td id="5,7"> </td>
+                <td id="5,8"> </td>
+            </tr>
+
+            <tr class="cells">
+                <td id="6,0"> </td>
+                <td id="6,1"> </td>
+                <td class="borderRigth" id="6,2"> </td>
+                <td id="6,3"> </td>
+                <td id="6,4"> </td>
+                <td class="borderRigth" id="6,5"> </td>
+                <td id="6,6"> </td>
+                <td id="6,7"> </td>
+                <td id="6,8"> </td>
+            </tr>
+
+            <tr class="cells">
+                <td id="7,0"> </td>
+                <td id="7,1"> </td>
+                <td class="borderRigth" id="7,2"> </td>
+                <td id="7,3"> </td>
+                <td id="7,4"> </td>
+                <td class="borderRigth" id="7,5"> </td>
+                <td id="7,6"> </td>
+                <td id="7,7"> </td>
+                <td id="7,8"> </td>
+            </tr>
+
+            <tr class="cells">
+                <td id="8,0"> </td>
+                <td id="8,1"> </td>
+                <td class="borderRigth" id="8,2"> </td>
+                <td id="8,3"> </td>
+                <td id="8,4"> </td>
+                <td class="borderRigth" id="8,5"> </td>
+                <td id="8,6"> </td>
+                <td id="8,7"> </td>
+                <td id="8,8"> </td>
+            </tr>
+
+        </table>
+    </div>
+    <div id="timerH1">
+        <!-- //timer font// -->
+        <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <div style="font-family: 'Orbitron', sans-serif;"> 
+        <h1 id="timer"><time>00:00:00</time></h1>
+    </div>
+    </div>
+    <div>
+        <button class="finishAgainButtons" id="startTimerBtn"
+            onclick="generateRandomSolvedSudoku();createFinishBtn();createAgainBtn();disabledStartButton();timer();createHintsButton()">Start</button>
+        <div id="againButtons"></div>
+        <div id="finishButtons"></div>
+    </div>
+    
+    <!-- //hints// -->
+    <div id="hints" onclick="createHintsKeyboard()" >↓Click for HINT↓</div>
+    <div id="only1Hint" >Click ONE hint ONLY!! </div>
+
+    <div id="keyboard">  
+        <div id="hints147">
+        <button class="keys" onclick="getHintButton(value)" value=1>1</button>
+        <button class="keys" onclick="getHintButton(value)" value=4>4</button>
+        <button class="keys" onclick="getHintButton(value)" value=7>7</button>
+        </div><br>
+
+        <div id="hints258">
+        <button class="keys" onclick="getHintButton(value)" value=2>2</button>
+        <button class="keys" onclick="getHintButton(value)" value=5>5</button>
+        <button class="keys" onclick="getHintButton(value)" value=8>8</button>
+        </div><br>
+
+        <div id="hints369">
+        <button class="keys" onclick="getHintButton(value)" value=3>3</button>
+        <button class="keys" onclick="getHintButton(value)" value=6>6</button>
+        <button class="keys" onclick="getHintButton(value)" value=9>9</button>
+        </div>
+
+    </div>
+
+    <div id="testDiv"> </div>
+    <script src='sudokuGameScript.js'></script>
+
+</body>
+
+</html>

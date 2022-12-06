@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="welcomeStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Welcome</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body onload=getUsernameFromLocalStoreg()>
+
+    <div class="banner-text">
+        <h2 id="welcome"> </h2>
+        <h3>Select difficulty</h3>
+
+        <div id="levels">
+            <button onclick="selectLevelButton(value)" value="20">EASY</button>
+            <button onclick="selectLevelButton(value)" value="40">MEDIUM</button>
+            <button onclick="selectLevelButton(value)" value="60">HARD</button>
+        </div>
+    </div>
+    <div class="animation-area">
+        <ul class="box-area">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script src="welcomeScript.js"></script>
+</body>
+
+</html>
